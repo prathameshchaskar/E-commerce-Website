@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export default function AddDeliveryAddressForm({ handleNext }) {
   const navigate = useNavigate();
-    const [selectedAddress, setSelectedAdress] = useState(null);
+  const [selectedAddress, setSelectedAdress] = useState(null);
 
   // console.log("auth", auth);
 
@@ -25,19 +25,25 @@ export default function AddDeliveryAddressForm({ handleNext }) {
       mobile: data.get("phoneNumber"),
     };
 
-     // after perfoming all the opration
+    // after perfoming all the opration
     handleNext();
   };
-
-  
 
   return (
     <Grid container spacing={4}>
       <Grid item xs={12} lg={5}>
         <Box className="border rounded-md shadow-md h-[30.5rem] overflow-y-scroll ">
-          
-              <AddressCard />
-              
+          <div className="p-5 py-7 border-b cursor-pointer">
+            <AddressCard />
+            <Button
+              sx={{ mt: 2 }}
+              size="large"
+              variant="contained"
+              color="primary"
+            >
+              Deliver Here
+            </Button>
+          </div>
         </Box>
       </Grid>
       <Grid item xs={12} lg={7}>
@@ -123,7 +129,7 @@ export default function AddDeliveryAddressForm({ handleNext }) {
                   variant="contained"
                   color="primary"
                 >
-                  Deliverd Here
+                  Deliver Here
                 </Button>
               </Grid>
             </Grid>
